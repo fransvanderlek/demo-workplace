@@ -1,8 +1,5 @@
 version: "3"
 services:
-  opcua-proxy:
+  demo-workplace:
     image: org.intelligentindustry/demo-workplace:0.0.1-SNAPSHOT
-    
-
-networks:
-  proxynet:
+ 

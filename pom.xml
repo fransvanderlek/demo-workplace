@@ -1,17 +1,19 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.intelligentindustry</groupId>
-  <artifactId>demo-workplace</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  
-  	<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.intelligentindustry</groupId>
+	<artifactId>demo-workplace</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<log4j2-version>2.13.3</log4j2-version>
 	</properties>
-  
-  <dependencyManagement>
+
+	<dependencyManagement>
 		<dependencies>
 			<!-- Camel BOM -->
 			<dependency>
@@ -40,18 +42,32 @@
 			<artifactId>camel-milo</artifactId>
 			<!-- use the same version as your Camel core version -->
 		</dependency>
-		
-				<!-- logging -->
+
+		<!-- logging -->
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
+			<type>pom</type>
 			<scope>runtime</scope>
-			<version>${log4j2-version}</version>
+			<version>2.13.2</version>
 		</dependency>
-  
-  </dependencies>
-  
-  <build>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.32</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.32</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
@@ -126,7 +142,7 @@
 			</plugin>
 		</plugins>
 	</build>
-  
-  
-  
+
+
+
 </project>
