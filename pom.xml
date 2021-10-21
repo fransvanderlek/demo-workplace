@@ -79,7 +79,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>dependency/</classpathPrefix>
-							<mainClass>org.intelligentindustry.opcuaproxy.MainApp</mainClass>
+							<mainClass>org.intelligentindustry.demoworkplace.MainApp</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
