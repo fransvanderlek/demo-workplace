@@ -64,26 +64,7 @@ public class MainApp {
 	
 
 	private static OpcUaClient createClient() throws Exception {
-        // Path securityTempDir = Paths.get(System.getProperty("java.io.tmpdir"), "client", "security");
-        // Files.createDirectories(securityTempDir);
-        // if (!Files.exists(securityTempDir)) {
-        //     throw new Exception("unable to create security dir: " + securityTempDir);
-        // }
-
-        // File pkiDir = securityTempDir.resolve("pki").toFile();
-
-        // LoggerFactory.getLogger(MainApp.class)
-        //     .info("security dir: {}", securityTempDir.toAbsolutePath());
-        // LoggerFactory.getLogger(MainApp.class)
-        //     .info("security pki dir: {}", pkiDir.getAbsolutePath());
-
-        // KeyStoreLoader loader = new KeyStoreLoader().load(securityTempDir);
-
-        // trustListManager = new DefaultTrustListManager(pkiDir);
-
-        // DefaultClientCertificateValidator certificateValidator =
-        //     new DefaultClientCertificateValidator(trustListManager);
-
+ 
         return OpcUaClient.create(
             getEndpointUrl(),
             endpoints ->
@@ -94,10 +75,6 @@ public class MainApp {
                 configBuilder
                     .setApplicationName(LocalizedText.english("eclipse milo opc-ua client"))
                     .setApplicationUri("urn:eclipse:milo:examples:client")
-                    // .setKeyPair(loader.getClientKeyPair())
-                    // .setCertificate(loader.getClientCertificate())
-                    // .setCertificateChain(loader.getClientCertificateChain())
-                    // .setCertificateValidator(certificateValidator)
                     .setIdentityProvider(getIdentityProvider())
                     .setRequestTimeout(uint(5000))
                     .build()
@@ -113,8 +90,8 @@ public class MainApp {
     }
 
     static SecurityPolicy getSecurityPolicy() {
-        return SecurityPolicy.None; // .Basic256Sha256;
-    }
+        return SecurityPolicy.None;
+	}
 
     static IdentityProvider getIdentityProvider() {
         return new AnonymousProvider();
