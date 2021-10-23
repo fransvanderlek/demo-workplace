@@ -1,22 +1,14 @@
 package org.intelligentindustry.demoworkplace;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import org.eclipse.milo.opcua.sdk.client.OpcUaClient;
 import org.eclipse.milo.opcua.sdk.client.api.identity.AnonymousProvider;
 import org.eclipse.milo.opcua.stack.core.security.SecurityPolicy;
-import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.function.Predicate;
 
 import org.eclipse.milo.opcua.sdk.client.api.identity.IdentityProvider;
 import org.eclipse.milo.opcua.stack.core.types.structured.EndpointDescription;
 
-import org.eclipse.milo.opcua.stack.core.UaException;
 import org.eclipse.milo.opcua.stack.core.types.builtin.NodeId;
 import org.eclipse.milo.opcua.stack.core.types.builtin.StatusCode;
 import org.eclipse.milo.opcua.stack.core.types.builtin.Variant;
@@ -27,10 +19,15 @@ import org.eclipse.milo.opcua.stack.core.types.builtin.LocalizedText;
 import static org.eclipse.milo.opcua.stack.core.types.builtin.unsigned.Unsigned.uint;
 import static org.eclipse.milo.opcua.stack.core.util.ConversionUtil.l;
 
+/**
+ * TODO: add support for subscribing to events, then invoke method when event is received
+ * 
+ */
 public class MainApp {
 
 	public static void main(String... args) throws Exception {
 		
+
 		System.out.println("Starting MainApp");
 
 		OpcUaClient client = createClient();
