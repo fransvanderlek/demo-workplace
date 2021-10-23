@@ -1,6 +1,6 @@
 package org.intelligentindustry.demoworkplace;
 
-import org.apache.camel.main.Main;
+
 
 public class MainApp {
 
@@ -8,9 +8,7 @@ public class MainApp {
 		
 		System.out.println("Starting MainApp");
 		
-        Main main = new Main();
-        main.configure().addRoutesBuilder(new DemoWorkplaceRouteBuilder());
-        main.run(args);
+ 
      
     }
 }
