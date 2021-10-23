@@ -13,13 +13,20 @@
 		<log4j2-version>2.13.3</log4j2-version>
 	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-		
 
+
+	<dependencyManagement>
+	
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.milo</groupId>
+			<artifactId>sdk-client</artifactId>
+			<version>0.6.3</version>
+		</dependency>
 
 	</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<defaultGoal>install</defaultGoal>
@@ -96,6 +103,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 
 
